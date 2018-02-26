@@ -1,0 +1,37 @@
+Analysis initiated from SIMULIA established products
+Abaqus JOB test_C3D8R_IncrementSize_IncrementSize_001_U1_005
+Abaqus 3DEXPERIENCE R2017x
+Abaqus License Manager checked out the following licenses:
+Abaqus/Standard checked out 5 tokens from Flexnet server lisens02.ivt.ntnu.no.
+<515 out of 1000 licenses remain available>.
+Begin Compiling Abaqus/Standard User Subroutines
+2/26/2018 1:37:04 PM
+Intel(R) Visual Fortran Intel(R) 64 Compiler XE for applications running on Intel(R) 64, Version 14.0.3.202 Build 20140422
+Copyright (C) 1985-2014 Intel Corporation.  All rights reserved.
+
+End Compiling Abaqus/Standard User Subroutines
+Begin Linking Abaqus/Standard User Subroutines
+   Creating library standardU.lib and object standardU.exp
+End Linking Abaqus/Standard User Subroutines
+2/26/2018 1:37:04 PM
+Begin Analysis Input File Processor
+2/26/2018 1:37:04 PM
+Run pre.exe
+2/26/2018 1:37:08 PM
+End Analysis Input File Processor
+Begin Abaqus/Standard Analysis
+2/26/2018 1:37:08 PM
+Run standard.exe
+2/26/2018 1:37:14 PM
+End Abaqus/Standard Analysis
+Begin MFS->SFS and SIM cleanup
+2/26/2018 1:37:14 PM
+Run SMASimUtility.exe
+2/26/2018 1:37:14 PM
+End MFS->SFS and SIM cleanup
+Abaqus JOB test_C3D8R_IncrementSize_IncrementSize_001_U1_005 COMPLETED
+
+Abaqus License Manager checked out the following license:
+"cae" from Flexnet server lisens02.ivt.ntnu.no
+<70 out of 100 licenses remain available>.
+
