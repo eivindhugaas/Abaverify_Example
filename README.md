@@ -18,9 +18,9 @@ There are a few mock tests, two that tests the max stress in one direction each 
  
 to run the example use theese three following commands in the abaqus cmd (not the normal cmd):
 
-cd location/of/folder/named/tests
-activate py27
-python test_runner.py
+- cd location/of/folder/named/tests
+- activate py27
+- python test_runner.py
 
 If you want to make your own input file, then here are some tips:
 
