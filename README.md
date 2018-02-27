@@ -18,7 +18,7 @@ Optional prerequisites/Troubleshooting:
 - Abaqus 2017 (Software Center)
 - Setup: file:///C:/Users/eivinhug/Downloads/LinkingAbaqus2017andIntelParallelStudioXE2016VisualFortraninWindows10x64.pdf
 - If something is not working, set Abaqus CAE and Abaqus CMD shortcuts to run as adminstrator by default. right click -> open file location -> right click again -> properties -> advanced.
-- The abaqus verify -all may not work in CMD even though it actually works, for the example that was the case and this bug has also been discovered over at a KT PhD Candidate's computer.
+- The abaqus verify -all may not work in CMD even though UMAT/VUMAT actually works, for the example that was the case. This bug has also been discovered over at a KT PhD Candidate's computer with the same VS/Fortran/Abq.
 
 What is in this example:
 The exapmle UMAT file is a simple Max stress with degradation of the E modulus after failure by a factor sat in the UMAT itself (this factor could have been defined as a UMAT parameter in the material model, but its not.
