@@ -36,7 +36,6 @@ If you want to make your own input file, here are some tips:
 - you can parametrize the .inp, but then it wont open in CAE, the example file is parametrized for the parametric mesh size test.
 - Abaverify operates on history output only, so therefore any field output has to be defined as history output. See .inp example file.
 
-
-
+Feel free to add changes to the readme.
 
 
