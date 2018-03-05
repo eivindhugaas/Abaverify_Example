@@ -7,9 +7,9 @@ import shutil
 import abaverify as av
 
 
-class SingleC3D8RElementTests(av.TestCase):
-    def test_MaxStress_FiberDir(self):
-        self.runTest('test_C3D8R_MaxStress_FiberDir')    
+class SingleC3D8RElementTests(av.TestCase): #Name of class irrelevant
+    def test_MaxStress_FiberDir(self):      #Name of def irrelevant
+        self.runTest('test_C3D8R_MaxStress_FiberDir')  #Name of test relevant!
     def test_MaxStress_MatrixDir(self):
         self.runTest('test_C3D8R_MaxStress_MatrixDir')    
 
@@ -22,7 +22,7 @@ class ParametricTests(av.TestCase):
     __metaclass__ = av.ParametricMetaClass
 
     # Refers to the template input file name
-    baseName = "test_C3D8R_IncrementSize"
+    baseName = "test_C3D8R_IncrementSize" 
 
     # Range of parameters to test; all combinations are tested, but here
     parameters = {'IncrementSize': [0.01,0.02],'U1':[0.05,0.1]}
