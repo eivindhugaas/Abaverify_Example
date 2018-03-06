@@ -23,6 +23,12 @@ Optional prerequisites/Troubleshooting:
 What is in this example:
 The exapmle UMAT file is a simple Max stress with degradation of the E modulus after failure by a factor sat in the UMAT itself (this factor could have been defined as a UMAT parameter in the material model, but its not. UMAT beginner challenge: make it a material parameter!).
 There are a few mock tests, two that tests the max stress at a displacement of 0.1 in one direction each and one parametric test that checks E modulus pre-failure for a few different displacements and mesh sizes.
+
+Note that the material used is physically impossible as it has 0.3 in poissons ratio in all directions despite being glass fiber. How strange you might think, so did the author upon discovering this.
+
+There is also included one test runner for the UMAT CompDam_DGD run with the NASA .props file format on material properties. This file is fairly similar to the test files in the test folder of the CompDam_DGD package. Note that the material is transversly isotropic in the .props file.
+
+For opening the testmodel (simple 1*1*1 cube loaded in x or y) a non parameterized model is also provided, for convenience and visualization.
  
 to run the example use theese three following commands in the abaqus cmd (not the normal cmd):
 
