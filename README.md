@@ -42,7 +42,7 @@ Code Troubleshooting:
 - "TypeError: runTest() takes exactly 2 arguments (1 given)" in cmd. Solution: name the .py and .inp "test_....."
 - "Error: Abaqus odb was not generated. Check the log file in the testOutput directory." in cmd.
 
-- If extensive troubleshooting is needed, use the classic print approach in python, this also works if the UMAT/VUMAT isfaulty, though in UMAT/VUMAT the print statement is Write(*,*) followed by what you want to print.
+- If extensive troubleshooting is needed, use the classic print approach in python, this also works if the UMAT/VUMAT is faulty, though in UMAT/VUMAT the print statement is Write(*,*) followed by what you want to print.
 
 Feel free to add changes to the readme and add troubleshooting as you go along.
 
