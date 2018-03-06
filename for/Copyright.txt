@@ -1,0 +1,1 @@
+All files for the CompDam_DGD UMAT/VUMAT is copyright of NASA and can be found here: https://github.com/nasa/CompDam_DGD

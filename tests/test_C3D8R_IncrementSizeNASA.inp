@@ -1,0 +1,132 @@
+*Heading
+ Single element test for Fiber-direction response
+**
+*Parameter
+IncrementSize = 0.01
+U1=0.05
+** NODES
+**
+*Node
+      1,            0.,            0.,            0.
+      2,           1.0,            0.,            0.
+      3,           1.0,           1.0,            0.
+      4,            0.,           1.0,            0.
+      5,            0.,            0.,            1.0
+      6,           1.0,            0.,            1.0
+      7,           1.0,           1.0,            1.0
+      8,            0.,           1.0,            1.0
+*NSET, NSET=X+
+  2, 3, 6, 7
+*NSET, NSET=X-
+  1, 4, 5, 8
+*NSET, NSET=Y+
+  3, 4, 7, 8
+*NSET, NSET=Y-
+  1, 2, 5, 6
+*NSET, NSET=Z+
+  5, 6, 7, 8
+*NSET, NSET=Z-
+  1, 2, 3, 4
+**
+** Elements
+**
+*Element, type=C3D8R, ELSET=ALL_ELEMS
+  1, 1, 2, 3, 4, 5, 6, 7, 8
+**
+** Properties
+**
+*Solid Section, elset=ALL_ELEMS, material=UMAT_MAT-C3D8R, controls=C-1
+*Section Controls, name=C-1, hourglass=ENHANCED
+** 
+** MATERIALS
+**
+*Material, name=UMAT_MAT-C3D8R
+*Density
+ 1.59d-05,
+*User material, constants=4
+** 1              2                  3          4
+** feature flags, , 1.0, 4, 5, 6, 7, 8
+          100000, ,  1.0,  ,  ,  ,  ,  ,
+**
+*Depvar, delete=11
+  19,
+  1, CDM_d2
+  2, CDM_Fb1
+  3, CDM_Fb2
+  4, CDM_Fb3
+  5, CDM_B
+  6, CDM_Lc1
+  7, CDM_Lc2
+  8, CDM_Lc3
+  9, CDM_FIm
+ 10, CDM_alpha
+ 11, CDM_STATUS
+ 12, CDM_Plas12
+ 13, CDM_Inel12
+ 14, CDM_FIfT
+ 15, CDM_slide1
+ 16, CDM_slide2
+ 17, CDM_FIfC
+ 18, CDM_d1T
+ 19, CDM_d1C
+**
+** INITIAL CONDITIONS
+**
+*Initial Conditions, Type=Solution
+ALL_ELEMS,  0.d0,  0.d0,  0.d0,  0.d0,  0.d0,  0.d0,  0.d0,
+            0.d0,  0.d0,  -999,     1,  0.d0,  0.d0,  0.d0,
+            0.d0,  0.d0,  0.d0,  0.d0,  0.d0
+**
+** In each step, NLGEOM=YES must be used. This is the default setting.
+** 
+** BOUNDARY CONDITIONS
+** 
+** Name: BC-2 Type: Displacement/Rotation
+*Boundary
+X-, 1, 1
+** ----------------------------------------------------------------
+** 
+** STEP: Step-1
+** 
+*Step, name=Step-1, nlgeom=YES, inc=100000
+*Static, direct
+<IncrementSize>, 1., 
+** 
+** Loading
+**
+*Amplitude, name=Instant
+             0.,              1.,              1.,              1.
+*Amplitude, name=Lin
+             0.,              0.,              1.,              1.
+** 
+** Name: BC-2 Type: Displacement/Rotation
+*Boundary, op=NEW, amplitude=Instant
+X-, 1, 1
+** Name: BC-3 Type: Displacement/Rotation
+*Boundary, op=NEW, amplitude=Lin
+X+, 1, 1, <U1>
+** Name: BC-4 Type: Displacement/Rotation
+*Boundary, op=NEW, amplitude=Instant
+Y-, 2, 2
+** Name: BC-5 Type: Displacement/Rotation
+*Boundary, op=NEW, amplitude=Instant
+Z-, 3, 3
+** 
+** OUTPUT REQUESTS
+** 
+*Restart, write, frequency=0
+** 
+** OUTPUT REQUESTS
+** 
+** FIELD OUTPUT: F-Output-1
+** 
+*Output, field, variable=PRESELECT
+** 
+** HISTORY OUTPUT: H-Output-2
+** 
+*Output, history
+*Element Output, elset=ALL_ELEMS
+S11, LE11
+**
+*End Step
+
