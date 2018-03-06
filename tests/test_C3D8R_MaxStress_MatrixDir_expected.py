@@ -9,7 +9,7 @@ parameters = {
                     "position": "Element 1 Int Point 1"
                 },
             "referenceValue": 0.0,
-            "tolerance": 0.1
+            "tolerance": 1.0
         },
         {
             "type": "max",
