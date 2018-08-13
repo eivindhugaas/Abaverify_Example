@@ -11,16 +11,16 @@ import os
 import shutil
 import abaverify as av
 def copyMatProps():
-    print 'ping'
-    # If testOutput doesn't exist, create it
+
+    # If testOutput doesn't exist, create 
     testOutputPath = os.path.join(os.getcwd(), 'testOutput')
     if not os.path.isdir(testOutputPath):
         os.makedirs(testOutputPath)
 
     # Put a copy of the properties file in the testOutput directory
-    propsFiles = [x for x in os.listdir(os.getcwd()) if x.endswith('.props')]
-    for propsFile in propsFiles:
-        shutil.copyfile(os.path.join(os.getcwd(), propsFile), os.path.join(os.getcwd(),'testOutput', propsFile))
+    #propsFiles = [x for x in os.listdir(os.getcwd()) if x.endswith('.props')]
+    #for propsFile in propsFiles:
+        #shutil.copyfile(os.path.join(os.getcwd(), propsFile), os.path.join(os.getcwd(),'testOutput', propsFile))
 
 
 
@@ -51,4 +51,5 @@ class ParametricTests(av.TestCase):
 
 if __name__ == "__main__":
     
-    av.runTests(relPathToUserSub='../for/UMAT')
+    #av.runTests(relPathToUserSub='../for/vumatWrapper')
+    av.runTests(relPathToUserSub='../for')#, double=True)

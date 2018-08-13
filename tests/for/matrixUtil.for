@@ -1,4 +1,4 @@
-#define type(x) TYPE(x), target
+define type(x) TYPE(x), target
 
 Module matrixAlgUtil_Mod
   ! Generic utilities for manipulating vectors and matrices
@@ -147,7 +147,7 @@ Contains
     Return
   End Function MInverse
 
-#ifndef PYEXT
+ifndef PYEXT
   Function MInverse6x6(mat)
     ! Finds the inverse of a 6x6 matrix
     ! Requires LAPACK
@@ -206,7 +206,7 @@ Contains
 
     Return
   End Function MInverse6x6
-#endif
+endif
 
   Pure Function MDet(mat)
     ! Finds the determinant of a 3x3 matrix

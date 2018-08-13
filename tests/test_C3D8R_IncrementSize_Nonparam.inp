@@ -1,9 +1,9 @@
 *Heading
  Single element test for Fiber-direction response
 **
-*Parameter
-IncrementSize = 0.01
-U1=0.05
+**Parameter
+**U1=0.05
+**incrementSize=0.01
 ** NODES
 **
 *Node, NSET=GLOBAL
@@ -35,10 +35,7 @@ U1=0.05
 **
 ** Properties
 **
-*Orientation, name=Ori-1
- 1., 0., 0., 0., 1., 0.
-3, 0.
-*Solid Section, elset=ALL_ELEMS, material=UMAT_MAT-C3D8R, controls=C-1, Orientation=Ori-1
+*Solid Section, elset=ALL_ELEMS, material=UMAT_MAT-C3D8R, controls=C-1
 *Section Controls, name=C-1, hourglass=ENHANCED
 ** 
 ** MATERIALS
@@ -87,22 +84,22 @@ U1=0.05
 ** 1              2  3          4  5  6  7  8
 ** feature flags,  , thickness, 4, 5, 6, 7, 8
           000000,  ,       1.0,  ,  ,  ,  ,  ,
+** 
+**       9      10         11        12        13        14        15        16
+**      E1,     E2,       G12,     nu12,     nu23,       YT,       SL,      GYT,
+    44800., 12100.,     3400.,      0.3,     0.3,      200.,         ,         ,
 **
-**  9         10        11        12        13        14        15        16
-**  E1,       E2,       G12,      nu12,     nu23,     YT,       SL        GYT,
-    171420.0, 9080.0,   5290.0,   0.32,     0.52,     62.3,     92.30,    0.277,
-**
-**  17        18        19        20        21        22        23        24
-**  GSL,      eta_BK,   YC,       alpha0    E3,       G13,      G23,      nu13,
-    0.788,    1.634,    199.8,    0.925,      ,          ,         ,          ,
+**  17        18        19        20         21         22        23        24
+**  GSL,      eta_BK,   YC,      alpha0,     E3,        G13,      G23,      nu13,
+       ,            ,     ,            , 12100.,      3400.,    3400.,       0.3,
 **
 **  25        26        27        28        29        30        31        32
 **  alpha11,  alpha22,  alpha_PL, n_PL,     XT,       fXT,      GXT,      fGXT,
-    -5.5d-6,  2.58d-5,          ,     ,     2326.2,   0.2,      133.3,    0.5,
+           ,         ,          ,     ,       ,          ,         ,          ,
 **
 **  33        34        35        36        37        38        39        40
 **  XC,       fXC,      GXC,      fGXC,       cf,     w_kb,     None,     mu
-    1200.1,      ,         ,          ,         ,     0.1,          ,     0.3
+      ,          ,         ,          ,         ,         ,          ,      
 **
 *Initial Conditions, Type=Solution
 ALL_ELEMS,  0.d0,  0.d0,  0.d0,  0.d0,  0.d0,  0.d0,  0.d0,
@@ -126,7 +123,7 @@ X-, 1, 1
 ** 
 *Step, name=Step-1, nlgeom=YES, inc=100000
 *Static, direct
-<IncrementSize>, 1., 
+0.01, 1., 
 ** 
 ** Loading
 **
@@ -140,7 +137,7 @@ X-, 1, 1
 X-, 1, 1
 ** Name: BC-3 Type: Displacement/Rotation
 *Boundary, op=NEW, amplitude=Lin
-X+, 1, 1, <U1>
+X+, 1, 1, 0.05
 ** Name: BC-4 Type: Displacement/Rotation
 *Boundary, op=NEW, amplitude=Instant
 Y-, 2, 2

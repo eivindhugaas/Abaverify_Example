@@ -11,8 +11,8 @@
 
 ! Include, via preprocessor, the source file containing the VUMAT subroutine to be wrapped. Using the preprocessor
 !  include statement is necessary so that the above #define commands propagate through all relevant source files.
-#include "CompDam_DGD.for"
-#include "vumatWrapper.for"
+include "CompDam_DGD.for"
+include "vumatWrapper.for"
 
 Subroutine UMAT( &
   stress,statev,DDSDDE,SSE,SPD,SCD,RPL,DDSDDT,DRPLDE,DRPLDT, &

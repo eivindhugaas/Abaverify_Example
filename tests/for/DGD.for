@@ -1331,7 +1331,7 @@ Contains
     Character(len=256) :: outputDir, fileName
     Character(len=32) :: nameValueFmt
 
-#ifndef PYEXT
+ifndef PYEXT
     Call VGETOUTDIR(outputDir, lenOutputDir)
     fileName = trim(outputDir) // '/debug.py'  ! Name of output file
 
@@ -1475,11 +1475,11 @@ Contains
     write(101, "(A,I1,A)") 'nshr = ', nshr
 
     close(101)
-#endif
+endif
     Return
   End Subroutine writeDGDArgsToFile
 
-#ifdef PYEXT
+ifdef PYEXT
   Subroutine log_init(level, fileName)
 
     Use forlog_Mod
@@ -1499,6 +1499,6 @@ Contains
     close(log%fileUnit)
   End Subroutine log_close
 
-#endif
+endif
 
 End Module DGD_Mod

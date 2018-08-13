@@ -1,4 +1,4 @@
-#define type(x) TYPE(x), target
+define type(x) TYPE(x), target
 
 Module matProp_Mod
   ! Module for loading and validating material properties
@@ -114,7 +114,7 @@ Contains
     ! Record material name
     m%name = trim(materialName)
 
-#ifndef PYEXT
+ifndef PYEXT
     ! Get the output directory (location to search for .props file)
     Call VGETOUTDIR(outputDir, lenOutputDir)
 
@@ -130,10 +130,10 @@ Contains
       fileName = trim(outputDir) // '/' // trim(materialName) // '.props'
       Inquire(FILE=fileName, EXIST=fileExists)
     End If
-#else
+else
     fileName = trim(materialName) // '.props'
     Inquire(FILE=fileName, EXIST=fileExists)
-#endif
+endif
 
     ! Handle cases
     If (fileExists .AND. nprops > 8) Then

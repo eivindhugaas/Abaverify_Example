@@ -34,9 +34,9 @@ Contains
 
     ! Calculate the specified definition of strain
     If (m%strainDef == 1) Then  ! Log strain
-#ifndef PYEXT
+ifndef PYEXT
       eps = LogStrain(U,ndir)
-#endif
+endif
     Else If (m%strainDef == 2) Then  ! GL strain
       eps = GLStrain(F,ndir)
     Else If (m%strainDef == 3) Then  ! Biot strain
@@ -77,7 +77,7 @@ Contains
     Return
   End Subroutine Strains
 
-#ifndef PYEXT
+ifndef PYEXT
   Function LogStrain(U, ndir)
     ! Computes the log strain from the stretch
 
@@ -119,7 +119,7 @@ Contains
 
     Return
   End Function LogStrain
-#endif
+endif
 
   Pure Function GLStrain(F, ndir)
     ! Computes the green lagrange strain from the deformation gradient

@@ -1,4 +1,4 @@
-#define type(x) TYPE(x), target
+define type(x) TYPE(x), target
 
 Module parameters_Mod
   ! Module for loading and validating DGD solution parameters
@@ -65,16 +65,16 @@ Contains
     ! Initializations
     Call initializeParameters()
 
-#ifndef PYEXT
+ifndef PYEXT
     ! Get the output directory (location to search for CompDam.parameters file)
     Call VGETOUTDIR(outputDir, lenOutputDir)
 
     ! Look to see if a parameters file exists
     ! First look for: CompDam.parameters
     fileName = trim(outputDir) // '/CompDam.parameters'
-#else
+else
     fileName = 'CompDam.parameters'
-#endif
+endif
     Inquire(FILE=fileName, EXIST=fileExists)
 
     ! If the file is present, load parameters from file
