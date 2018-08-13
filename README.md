@@ -16,7 +16,7 @@ Optional prerequisites/Troubleshooting:
 - Microsoft Visual Studio 2013 Update 5 (https://my.visualstudio.com) 
 - Visual Fortran Composer XE 2013 SP1 Update 3 (on NTNU progdist: P:\Campus\Intel\Visual Fortran Composer 2013 SP1)
 - Abaqus 2017 (on NTNU Software Center)
-- Setup: file:///C:/Users/eivinhug/Downloads/LinkingAbaqus2017andIntelParallelStudioXE2016VisualFortraninWindows10x64.pdf
+- Setup: https://www.researchgate.net/publication/313924098_Linking_ABAQUS_2017_and_Intel_Parallel_Studio_XE2016_Visual_Fortran_in_Windows_10_x64
 - If something is not working, set Abaqus CAE and Abaqus CMD shortcuts to run as adminstrator by default. right click -> open file location -> right click again -> properties -> advanced.
 - The abaqus verify -all may not work in CMD even though UMAT/VUMAT actually works, for the example that was the case. This bug has also been discovered over at a KT PhD Candidate's computer with the same VS/Fortran/Abq, so it's this bug is assumed legit for now.
 
@@ -47,7 +47,6 @@ Code Troubleshooting:
 - "ModuleNotFoundError: No module named 'main'" in cmd. Solution: py27 not activated. run "activate py27".
 - "TypeError: runTest() takes exactly 2 arguments (1 given)" in cmd. Solution: name the .py and .inp "test_....."
 - "Error: Abaqus odb was not generated. Check the log file in the testOutput directory." in cmd.
-
 - If extensive troubleshooting is needed, use the classic print approach in python, this also works if the UMAT/VUMAT is faulty, though in UMAT/VUMAT the print statement is Write(*,*) followed by what you want to print.
 
 Short description of how the NASA VUMAT works:
